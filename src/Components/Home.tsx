@@ -4,5 +4,5 @@ import Router from "next/router";
 import NavBar from "./NavBar";
 
 export default function Home() {
-  return <NavBar />;
+  return <h1>moo</h1>;
 }
