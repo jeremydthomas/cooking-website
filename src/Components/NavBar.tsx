@@ -19,7 +19,10 @@ function classNames(...classes: string[]) {
 
 export default function NavBar() {
   return (
-    <Disclosure as="nav" className=" bg-gray-800">
+    <Disclosure
+      as="nav"
+      className=" fixed left-0 top-0 z-10 w-full bg-gray-800 duration-300 ease-in"
+    >
       {({ open }) => (
         <>
           <div className="sticky z-10 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -35,7 +38,7 @@ export default function NavBar() {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex flex-1   justify-center ">
+              <div className="flex flex-1 ">
                 <div className="hidden grow sm:ml-6 sm:block">
                   <div className="flex  content-center justify-evenly  space-x-20">
                     {navigation.map((item) => (
