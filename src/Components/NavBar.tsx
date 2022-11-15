@@ -3,9 +3,11 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import img from "../images/2.png";
+import Link from "next/link";
 
 const navigation = [
-  { name: "Home", href: "#", current: true },
+  { name: "Bears Kitchen", href: "/", logo: "logo" },
+  { name: "Home", href: "/", current: true },
   { name: "Menu", href: "#", current: false },
   { name: "About Us", href: "#", current: false },
   { name: "Contact", href: "#", current: false },
@@ -35,7 +37,7 @@ export default function NavBar() {
               </div>
               <div className="flex flex-1   justify-center ">
                 <div className="hidden grow sm:ml-6 sm:block">
-                  <div className="flex justify-evenly space-x-20">
+                  <div className="flex  content-center justify-evenly  space-x-20">
                     {navigation.map((item) => (
                       <a
                         key={item.name}
@@ -43,6 +45,8 @@ export default function NavBar() {
                         className={classNames(
                           item.current
                             ? "bg-gray-900 text-white"
+                            : item.logo
+                            ? "text-md   font-bold text-white  "
                             : "text-gray-300 hover:bg-gray-700 hover:text-white",
                           "rounded-md px-3 py-2 text-sm font-medium"
                         )}
