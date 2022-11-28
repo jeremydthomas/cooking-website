@@ -1,5 +1,5 @@
 import Link from "next/link";
-import About from "../pages/About";
+import About from "../pages/about";
 import Router from "next/router";
 import NavBar from "./NavBar";
 
