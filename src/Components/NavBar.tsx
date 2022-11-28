@@ -1,11 +1,13 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 const navigation = [
+  { name: "Bears Kitchen", href: "/", logo: true },
   { name: "Home", href: "/", current: true },
-  { name: "Menu", href: "#", current: false },
-  { name: "About Us", href: "#", current: false },
-  { name: "Contact", href: "#", current: false },
+  { name: "Menu", href: "/menu", current: false },
+  { name: "About Us", href: "/about", current: false },
+  { name: "Contact", href: "/contact", current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -22,7 +24,7 @@ export default function NavBar() {
         <>
           <div className="sticky z-10 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
@@ -34,15 +36,15 @@ export default function NavBar() {
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 ">
-                <div className="hidden grow sm:ml-6 sm:block">
-                  <div className="flex justify-between">
+                <div className="hidden grow md:ml-6 md:block">
+                  <div className="flex justify-center">
                     <div
                       className={classNames(
                         "text-gray-300 hover:bg-gray-700 hover:text-white",
                         "rounded-md px-3 py-2 text-xl font-medium"
                       )}
                     >
-                      Bears Kitchen
+                      {/* <Link href="/">Bears Kitchen</Link> */}
                     </div>
                     <div className="flex  content-center justify-end  space-x-20">
                       {navigation.map((item) => (
@@ -52,6 +54,8 @@ export default function NavBar() {
                           className={classNames(
                             item.current
                               ? "bg-gray-900 text-white"
+                              : item.logo
+                              ? "rounded-md px-3 py-2 text-xl font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                               : "text-gray-300 hover:bg-gray-700 hover:text-white",
                             "text-md rounded-md px-3 py-2 font-medium"
                           )}
@@ -67,7 +71,7 @@ export default function NavBar() {
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden">
+          <Disclosure.Panel className="md:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3">
               {navigation.map((item) => (
                 <Disclosure.Button
