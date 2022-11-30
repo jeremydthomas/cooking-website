@@ -1,7 +1,8 @@
 import Head from "next/head";
-import Home from "../Components/Home";
-import NavBar from "../Components/NavBar";
 import Hero from "../Components/Hero";
+import Menu from "./menu";
+import Contact from "../Components/Contact";
+import Carousel from "../Components/Carousel";
 
 export default function Index() {
   return (
@@ -13,11 +14,14 @@ export default function Index() {
           content="Order Your favorite Filipino food here."
         />
       </Head>
+
       <Hero
         heading="Try Bears Kitchen Today!"
         message="Fresh, Fast and Delicious!"
       />
-      <Home />
+      <Carousel />
+      <Menu />
+      <Contact />
     </div>
   );
 }

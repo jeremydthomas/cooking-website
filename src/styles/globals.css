@@ -16,6 +16,11 @@ html {
   background-size: cover;
   height: 60vh;
 }
+
+.custom-carousel {
+  max-height: 40vh;
+  background-color: black;
+}
 /* a {
 	color: inherit;
 	text-decoration: none;

@@ -5,7 +5,7 @@ import Link from "next/link";
 const navigation = [
   { name: "Bears Kitchen", href: "/", logo: true },
   { name: "Home", href: "/", current: true },
-  { name: "Menu", href: "/menu", current: false },
+  { name: "Menu", href: "#menu", current: false },
   { name: "About Us", href: "/about", current: false },
   { name: "Contact", href: "/contact", current: false },
 ];
