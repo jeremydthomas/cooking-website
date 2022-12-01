@@ -4,7 +4,7 @@ function Hero({ heading, message }: { heading: string; message: string }) {
   return (
     <div className="custom-img mb-12 flex h-screen items-center justify-center bg-fixed bg-center">
       {/* overlay */}
-      <div className="absolute top-0 bottom-0 right-0 left-0 z-[2] h-60v bg-black/40" />
+      <div className="absolute top-0 bottom-0 right-0 left-0 z-[2] h-100v bg-black/40" />
       {/* image */}
       <div className="relative top-2 z-10 flex flex-col items-center justify-center">
         {/* <Image

@@ -5,9 +5,10 @@ import Link from "next/link";
 const navigation = [
   { name: "Bears Kitchen", href: "/", logo: true },
   { name: "Home", href: "/", current: true },
-  { name: "Menu", href: "#menu", current: false },
+  { name: "Menu", href: "/menu", current: false },
+  { name: "Gallery", href: "#gallery", current: false },
   { name: "About Us", href: "/about", current: false },
-  { name: "Contact", href: "/contact", current: false },
+  { name: "Contact", href: "#contact", current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -18,7 +19,7 @@ export default function NavBar() {
   return (
     <Disclosure
       as="nav"
-      className=" fixed left-0 top-0 z-10 w-full bg-gray-800 duration-300 ease-in"
+      className=" fixed left-0 top-0 z-20 w-full bg-gray-800 duration-300 ease-in"
     >
       {({ open }) => (
         <>

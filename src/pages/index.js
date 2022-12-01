@@ -3,6 +3,7 @@ import Hero from "../Components/Hero";
 import Menu from "./menu";
 import Contact from "../Components/Contact";
 import Carousel from "../Components/Carousel";
+import Footer from "../Components/Footer";
 
 export default function Index() {
   return (
@@ -20,8 +21,9 @@ export default function Index() {
         message="Fresh, Fast and Delicious!"
       />
       <Carousel />
-      <Menu />
+      {/* <Menu /> */}
       <Contact />
+      {/* <Footer /> */}
     </div>
   );
 }

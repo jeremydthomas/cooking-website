@@ -25,10 +25,10 @@ export default function SliderComponent() {
     "/images/ube-flan.jpg",
   ];
   return (
-    <div className="-mt-12 bg-black ">
+    <div id="gallery" className="-mt-12 bg-black ">
       <Swiper
         centeredSlides={true}
-        slidesPerView={1}
+        slidesPerView={"auto"}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,

@@ -1,9 +1,22 @@
 export default function Menu() {
   return (
-    <div id="menu" className="container relative mx-auto p-6">
-      <div className="flex items-center justify-between bg-white"></div>
-      <div className="flex-space-x-6">
-        <h1 className="text-3xl font-bold">Menu</h1>
+    <div className="menu">
+      <div className="mt-40 flex  flex-col items-center justify-center  ">
+        <div>
+          <picture>
+            <img src="/images/dishes.svg" alt="menu" className="w-max" />
+          </picture>
+          <div className="flex flex-col items-center justify-center">
+            <h1 className="text-5xl font-black">Menu</h1>
+            <p className="w-36 border-t-2 border-black"></p>
+          </div>
+          <ul className="mt-6 text-lg  font-normal capitalize">
+            <li className="flex justify-between">
+              <span>lumpia</span>
+              <span>$1 each</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
