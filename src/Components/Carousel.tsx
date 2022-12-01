@@ -25,7 +25,12 @@ export default function SliderComponent() {
     "/images/ube-flan.jpg",
   ];
   return (
-    <div id="gallery" className="-mt-12 bg-black ">
+    <div id="gallery" className="custom-swiper ">
+      <div className="flex flex-col items-center justify-center">
+        <h1 className="text-5xl  font-black">Food Pictures</h1>
+        <p className="mb-4 w-80 border-t-2 border-black"></p>
+      </div>
+
       <Swiper
         centeredSlides={true}
         slidesPerView={"auto"}
@@ -33,9 +38,9 @@ export default function SliderComponent() {
           delay: 2500,
           disableOnInteraction: false,
         }}
-        pagination={{
-          clickable: true,
-        }}
+        // pagination={{
+        //   clickable: true,
+        // }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"

@@ -19,10 +19,13 @@ export default function Index() {
       <Hero
         heading="Try Bears Kitchen Today!"
         message="Fresh, Fast and Delicious!"
+        orderNow="To order call Jennifer at 701-389-7855"
       />
-      <Carousel />
-      {/* <Menu /> */}
-      <Contact />
+      <div className="flex justify-between">
+        <Carousel />
+        <Menu />
+      </div>
+      {/* <Contact /> */}
       {/* <Footer /> */}
     </div>
   );

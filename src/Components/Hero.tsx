@@ -1,6 +1,13 @@
 import Link from "next/link";
 
-function Hero({ heading, message }: { heading: string; message: string }) {
+function Hero({
+  heading,
+  message,
+  orderNow,
+}: {
+  heading: string;
+  message: string;
+}) {
   return (
     <div className="custom-img mb-12 flex h-screen items-center justify-center bg-fixed bg-center">
       {/* overlay */}
@@ -18,8 +25,9 @@ function Hero({ heading, message }: { heading: string; message: string }) {
         <div className=" flex flex-col items-center p-5 text-white">
           <h2 className="text-2xl font-bold sm:text-5xl">{heading}</h2>
           <p className="py-5 text-xl">{message}</p>
+          <p className="pb-5 text-xl font-bold">{orderNow}</p>
           <button className="py2 h-10 rounded-lg border bg-white px-8 text-black">
-            <Link href="/menu"> View Menu </Link>
+            <Link href="#menu"> View Menu </Link>
           </button>
         </div>
       </div>

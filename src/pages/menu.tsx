@@ -1,11 +1,11 @@
 export default function Menu() {
   return (
-    <div className="menu">
-      <div className="mt-40 flex  flex-col items-center justify-center  ">
-        <div>
-          <picture>
+    <div id="menu" className="custom-swiper">
+      <div className=" flex flex-col items-center justify-center  ">
+        <div className="w-40w">
+          {/* <picture>
             <img src="/images/dishes.svg" alt="menu" className="w-max" />
-          </picture>
+          </picture> */}
           <div className="flex flex-col items-center justify-center">
             <h1 className="text-5xl font-black">Menu</h1>
             <p className="w-36 border-t-2 border-black"></p>
