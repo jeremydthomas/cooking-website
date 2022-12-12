@@ -27,8 +27,8 @@ export default function SliderComponent() {
   return (
     <div id="gallery" className="custom-swiper ">
       <div className="flex flex-col items-center justify-center">
-        <h1 className="text-5xl  font-black">Food Pictures</h1>
-        <p className="mb-4 w-80 border-t-2 border-black"></p>
+        <h1 className="text-2xl font-black  sm:text-5xl">Food Pictures</h1>
+        <p className="mb-4 w-40 border-t-2 border-black sm:w-80"></p>
       </div>
 
       <Swiper

@@ -21,7 +21,7 @@ export default function Index() {
         message="Fresh, Fast and Delicious!"
         orderNow="To order call Jennifer at 701-389-7855"
       />
-      <div className="flex justify-between">
+      <div className="mt-2 flex flex-col items-center sm:flex-row sm:items-start sm:justify-between ">
         <Carousel />
         <Menu />
       </div>
