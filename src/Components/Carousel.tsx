@@ -25,7 +25,7 @@ export default function SliderComponent() {
     "/images/ube-flan.jpg",
   ];
   return (
-    <div id="gallery" className="custom-swiper ">
+    <div id="gallery" className="sm:custom-swiper w-full bg-gray-200">
       <div className="flex flex-col items-center justify-center">
         <h1 className="text-2xl font-black  sm:text-5xl">Food Pictures</h1>
         <p className="mb-4 w-40 border-t-2 border-black sm:w-80"></p>
