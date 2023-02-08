@@ -7,6 +7,7 @@ function Hero({
 }: {
   heading: string;
   message: string;
+  orderNow: string;
 }) {
   return (
     <div className="custom-img  flex h-screen items-center justify-center bg-fixed bg-center">
