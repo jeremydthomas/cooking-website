@@ -7,7 +7,7 @@ function classNames(...classes: string[]) {
 }
 
 const initialState = [
-  { name: "Bears Kitchen", href: "/", logo: true },
+  { name: "Bears Kitchen", href: "#", logo: true },
   { name: "Home", href: "#", current: true },
   { name: "Menu", href: "#menu", current: false },
   { name: "Gallery", href: "#gallery", current: false },
@@ -28,7 +28,6 @@ export default function NavBar() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const handleClick = (e: any) => {
-    e.preventDefault();
     console.log(e.target.text);
     let temp = state.map((item: any) => {
       if (item.name === e.target.text) {
