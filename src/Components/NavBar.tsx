@@ -1,21 +1,46 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import Link from "next/link";
-
-const navigation = [
-  { name: "Bears Kitchen", href: "/", logo: true },
-  { name: "Home", href: "/", current: true },
-  { name: "Menu", href: "/menu", current: false },
-  { name: "Gallery", href: "#gallery", current: false },
-  { name: "About Us", href: "/about", current: false },
-  { name: "Contact", href: "#contact", current: false },
-];
+import { useReducer } from "react";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
+const initialState = [
+  { name: "Bears Kitchen", href: "/", logo: true },
+  { name: "Home", href: "#", current: true },
+  { name: "Menu", href: "#menu", current: false },
+  { name: "Gallery", href: "#gallery", current: false },
+  { name: "About Us", href: "#about", current: false },
+  { name: "Contact", href: "#contact", current: false },
+];
+
+function reducer(state: any, action: any) {
+  switch (action.type) {
+    case "set":
+      return action.payload;
+    default:
+      throw new Error();
+  }
+}
+
 export default function NavBar() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const handleClick = (e: any) => {
+    e.preventDefault();
+    console.log(e.target.text);
+    let temp = state.map((item: any) => {
+      if (item.name === e.target.text) {
+        item.current = true;
+      } else {
+        item.current = false;
+      }
+      return item;
+    });
+    dispatch({ type: "set", payload: temp });
+  };
+
   return (
     <Disclosure
       as="nav"
@@ -48,23 +73,29 @@ export default function NavBar() {
                       {/* <Link href="/">Bears Kitchen</Link> */}
                     </div>
                     <div className="flex  content-center justify-end  space-x-20">
-                      {navigation.map((item) => (
-                        <a
-                          key={item.name}
-                          href={item.href}
-                          className={classNames(
-                            item.current
-                              ? "bg-gray-900 text-white"
-                              : item.logo
-                              ? "rounded-md px-3 py-2 text-xl font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                              : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                            "text-md rounded-md px-3 py-2 font-medium"
-                          )}
-                          aria-current={item.current ? "page" : undefined}
-                        >
-                          {item.name}
-                        </a>
-                      ))}
+                      {initialState.map(
+                        (item) => (
+                          console.log(item),
+                          (
+                            <a
+                              key={item.name}
+                              href={item.href}
+                              className={classNames(
+                                item.current
+                                  ? "bg-gray-900 text-white"
+                                  : item.logo
+                                  ? "rounded-md px-3 py-2 text-xl font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                                  : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                                "text-md rounded-md px-3 py-2 font-medium"
+                              )}
+                              onClick={(e) => handleClick(e)}
+                              aria-current={item.current ? "page" : undefined}
+                            >
+                              {item.name}
+                            </a>
+                          )
+                        )
+                      )}
                     </div>
                   </div>
                 </div>
@@ -74,7 +105,7 @@ export default function NavBar() {
 
           <Disclosure.Panel className="md:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3">
-              {navigation.map((item) => (
+              {initialState.map((item) => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"
@@ -85,6 +116,7 @@ export default function NavBar() {
                       : "text-gray-300 hover:bg-gray-700 hover:text-white",
                     "block rounded-md px-3 py-2 text-base font-medium"
                   )}
+                  onClick={(e: any) => handleClick(e)}
                   aria-current={item.current ? "page" : undefined}
                 >
                   {item.name}
